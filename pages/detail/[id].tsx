@@ -62,7 +62,7 @@ const Detail = ({ postDetails }: IProps) => {
         if (userProfile && comment) {
             setIsPosting(true)
 
-            const { data } = await axios.put(`${URL}/api/post/${post._id}`, {
+            const { data } = await axios.put(`https://tiktok-clone-project-final.vercel.app/api/post/${post._id}`, {
                 userId: userProfile._id,
                 comment
             })
@@ -166,7 +166,7 @@ const Detail = ({ postDetails }: IProps) => {
 }
 
 export const getServerSideProps = async ({ params: { id } }: { params: { id: string } }) => {
-    const { data } = await axios.get(`${URL}/api/post/${id}`)
+    const { data } = await axios.get(`https://tiktok-clone-project-final.vercel.app/api/post/${id}`)
 
     return {
         props: { postDetails: data }
