@@ -2,7 +2,7 @@ import create from 'zustand'
 import { persist } from 'zustand/middleware'
 import axios from 'axios'
 
-const url = process.env.BASE_URL
+const url = 'https://tiktok-clone-project-final.vercel.app/'
 
 const authStore = (set: any) => ({
     userProfile: null,
