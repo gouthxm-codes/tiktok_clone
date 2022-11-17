@@ -62,7 +62,7 @@ const Upload = () => {
                 topic: category
             }
 
-            await axios.post(`${URL}/api/post`, doc)
+            await axios.post(`https://tiktok-clone-project-final.vercel.app/api/post`, doc)
             router.push('/')
         }
     }
