@@ -29,9 +29,9 @@ export const getServerSideProps = async ({
 }) => {
   let res = null;
   if (topic) {
-    res = await axios.get(`http://localhost:3000/api/discover/${topic}`)
+    res = await axios.get(`https://tiktok-clone-final-chi.vercel.app/api/discover/${topic}`)
   } else {
-    res = await axios.get(`http://localhost:3000/api/post`)
+    res = await axios.get(`https://tiktok-clone-final-chi.vercel.app/api/post`)
   }
 
 
