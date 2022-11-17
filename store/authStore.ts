@@ -2,7 +2,7 @@ import create from 'zustand'
 import { persist } from 'zustand/middleware'
 import axios from 'axios'
 
-const url = 'http://localhost:3000'
+const url = process.env.BASE_URL
 
 const authStore = (set: any) => ({
     userProfile: null,
