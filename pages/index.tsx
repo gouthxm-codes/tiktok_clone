@@ -3,6 +3,7 @@ import axios from 'axios';
 import { Video } from '../types';
 import VideoCard from '../components/VideoCard'
 import NoResult from '../components/NoResult'
+const URL = process.env.BASE_URL
 interface IProps {
   videos: Video[]
 }
@@ -29,9 +30,9 @@ export const getServerSideProps = async ({
 }) => {
   let res = null;
   if (topic) {
-    res = await axios.get(`https://tiktok-clone-final-chi.vercel.app/api/discover/${topic}`)
+    res = await axios.get(`${URL}/api/discover/${topic}`)
   } else {
-    res = await axios.get(`https://tiktok-clone-final-chi.vercel.app/api/post`)
+    res = await axios.get(`${URL}/api/post`)
   }
 
 

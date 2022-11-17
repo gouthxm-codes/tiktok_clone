@@ -11,6 +11,7 @@ import { IUser, Video } from "../../types"
 
 import useAuthStore from '../../store/authStore'
 
+const URL = process.env.BASE_URL
 
 const Search = ({ videos }: { videos: Video[] }) => {
     const [show, setShow] = useState(false)
@@ -72,7 +73,7 @@ export const getServerSideProps = async ({
 }: {
     params: { search: string }
 }) => {
-    const res = await axios.get(`https://tiktok-clone-final-chi.vercel.app/api/search/${search}`)
+    const res = await axios.get(`${URL}/api/search/${search}`)
 
     return {
         props: { videos: res.data }

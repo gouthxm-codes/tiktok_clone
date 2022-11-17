@@ -15,7 +15,7 @@ const Upload = () => {
     const [category, setCategory] = useState(topics[0].name)
     const [savingPost, setSavingPost] = useState(false)
     const router = useRouter()
-
+    const URL = process.env.BASE_URL
     const { userProfile }: { userProfile: any } = useAuthStore()
 
     const uploadVideo = async (e: any) => {
@@ -62,7 +62,7 @@ const Upload = () => {
                 topic: category
             }
 
-            await axios.post(`https://tiktok-clone-final-chi.vercel.app/api/post`, doc)
+            await axios.post(`${URL}/api/post`, doc)
             router.push('/')
         }
     }

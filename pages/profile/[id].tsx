@@ -6,7 +6,7 @@ import axios from "axios"
 import VideoCard from "../../components/VideoCard"
 import NoResult from "../../components/NoResult"
 import { IUser, Video } from "../../types"
-
+const URL = process.env.BASE_URL
 interface IProps {
     data: {
         user: IUser,
@@ -78,7 +78,7 @@ export const getServerSideProps = async ({
 }: {
     params: { id: string }
 }) => {
-    const res = await axios.get(`https://tiktok-clone-final-chi.vercel.app/api/profile/${id}`)
+    const res = await axios.get(`${URL}/api/profile/${id}`)
 
     return {
         props: { data: res.data }
